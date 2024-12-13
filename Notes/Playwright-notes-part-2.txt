@@ -1,0 +1,5 @@
+Lesson 2:
+
+Async and await: we need to put all the time, because if we dont all the steps are executed without an predefined sequence
+
+
