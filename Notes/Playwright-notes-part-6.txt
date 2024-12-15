@@ -1,0 +1,11 @@
+Lesson 6: Record & Play Scripts In Playwright |Test Generator| Codegen  
+
+npx playwright codegen -> to launch the Playwright Inspector and the recording
+
+for more help on commands: npx playwright codegen --help
+
+npx playwright codegen -o tests/mytest.spec.js -> this command creates a file with the test recorded in the recording mode
+
+npx playwright codegen --device "iPhone 13" --> it means that we are creating this script in the iphone 13 device. Playwright starts a browser session in the context of an emulated iPhone 13.
+
+This is important because sometimes you want to to tests for a specific type of browser or a specific type of measurements
