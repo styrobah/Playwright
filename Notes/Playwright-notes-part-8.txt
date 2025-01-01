@@ -1,0 +1,6 @@
+Lesson 8: Hard Assertions vs Soft Assertions
+
+
+Soft Assertions : The ones in which the test execution does not stop if the test does not meet the assertion condition
+
+Hard Assertions : The ones in which the test execution does stop if the test does not meet the assertion condition
