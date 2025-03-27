@@ -7,7 +7,6 @@ test.beforeEach(async ({browser}) =>  {
     await page.goto('https://demoblaze.com/index.html')
     //Login
     await page.locator('#login2').click();
-    
     await page.locator('#loginusername').fill('pavanol');
     await page.locator('#loginpassword').fill('test@123');
 
