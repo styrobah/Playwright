@@ -1,0 +1,51 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Multiple Files
+- Location: /Users/diogoteixeira/Desktop/PlaywrightNew/Playwright/tests/UploadFiles.spec.js:13:6
+
+# Error details
+
+```
+Error: browserType.launch: Executable doesn't exist at /Users/diogoteixeira/Library/Caches/ms-playwright/chromium_headless_shell-1161/chrome-mac/headless_shell
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     npx playwright install                                              ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect } = require('@playwright/test');
+   2 |
+   3 | test('Single File',async ({page}) => { 
+   4 |     await page.goto('https://testautomationpractice.blogspot.com/');
+   5 |     await page.locator('#singleFileInput').setInputFiles('tests/uploadFiles/foto1.png');
+   6 |
+   7 |     await page.waitForTimeout(5000);
+   8 |
+   9 |
+  10 | });
+  11 |
+  12 |
+> 13 | test.only('Multiple Files',async ({page}) => { 
+     |      ^ Error: browserType.launch: Executable doesn't exist at /Users/diogoteixeira/Library/Caches/ms-playwright/chromium_headless_shell-1161/chrome-mac/headless_shell
+  14 |     await page.goto('https://testautomationpractice.blogspot.com/');
+  15 |
+  16 |     await page.locator('#multipleFilesInput').setInputFiles(['tests/uploadFiles/foto1.png','tests/uploadFiles/foto2.png']);
+  17 |
+  18 |     await page.waitForTimeout(5000);
+  19 |
+  20 |
+  21 | })
+```

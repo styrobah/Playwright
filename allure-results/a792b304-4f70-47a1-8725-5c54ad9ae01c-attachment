@@ -1,0 +1,50 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Test1
+- Location: /Users/diogoteixeira/Desktop/PlaywrightNew/Playwright/tests/Annotations.spec.js:3:6
+
+# Error details
+
+```
+Error: browserType.launch: Executable doesn't exist at /Users/diogoteixeira/Library/Caches/ms-playwright/chromium_headless_shell-1161/chrome-mac/headless_shell
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     npx playwright install                                              ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect } = require('@playwright/test');
+   2 |
+>  3 | test.only('Test1',async ({page}) => { 
+     |      ^ Error: browserType.launch: Executable doesn't exist at /Users/diogoteixeira/Library/Caches/ms-playwright/chromium_headless_shell-1161/chrome-mac/headless_shell
+   4 |     console.log('Aqui');
+   5 | });
+   6 |
+   7 |
+   8 | test.skip('Test2',async ({page}) => { 
+   9 |     console.log('Aqui');
+  10 | });
+  11 |
+  12 | test.fail('Test3',async ({page}) => { 
+  13 |     console.log('Aqui');
+  14 | });
+  15 | test.fixme('Test4',async ({page}) => { 
+  16 |     console.log('Aqui');
+  17 | });
+  18 | test.slow('Test5',async ({page}) => { 
+  19 |     console.log('Aqui');
+  20 | });
+```
