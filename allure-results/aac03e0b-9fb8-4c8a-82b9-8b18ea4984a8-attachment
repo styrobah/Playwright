@@ -1,0 +1,45 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Get users
+- Location: /Users/diogoteixeira/Desktop/PlaywrightNew/Playwright/tests/APITests.spec.js:3:6
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "200"
+Received: 200
+    at /Users/diogoteixeira/Desktop/PlaywrightNew/Playwright/tests/APITests.spec.js:6:31
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect } = require('@playwright/test');
+   2 |
+   3 | test.only("Get users", async ({request})=>{
+   4 |     const response = await request.get('https://reqres.in/api/users?page=2');
+   5 |     console.log(await response.json());
+>  6 |     expect(response.status()).toBe('200');
+     |                               ^ Error: expect(received).toBe(expected) // Object.is equality
+   7 | });
+   8 |
+   9 | test("Create user", async ({request})=>{
+  10 |
+  11 | });
+  12 |
+  13 | test("Update user", async ({request})=>{
+  14 |
+  15 | });
+  16 |
+  17 | test("Delete user", async ({request})=>{
+  18 |
+  19 | });
+```

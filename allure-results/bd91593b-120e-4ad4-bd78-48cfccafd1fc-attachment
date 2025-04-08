@@ -1,0 +1,55 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create user
+- Location: /Users/diogoteixeira/Desktop/PlaywrightNew/Playwright/tests/APITests.spec.js:9:6
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: [Function status]
+    at /Users/diogoteixeira/Desktop/PlaywrightNew/Playwright/tests/APITests.spec.js:20:29
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect } = require('@playwright/test');
+   2 |
+   3 | test("Get users", async ({request})=>{
+   4 |     const response = await request.get('https://reqres.in/api/users?page=2');
+   5 |     console.log(await response.json());
+   6 |     expect(response.status()).toBe(200);
+   7 | });
+   8 |
+   9 | test.only("Create user", async ({request})=>{
+  10 |     const response = await request.post('https://reqres.in/api/users',{
+  11 |         data:{
+  12 |             "name":"Diogo",
+  13 |             "job":"engineer"
+  14 |         },
+  15 |         headers:{
+  16 |             "Accept":"application/json"
+  17 |         }
+  18 |     });
+  19 |     console.log(await response.json());
+> 20 |     expect(response.status).toBe(201);
+     |                             ^ Error: expect(received).toBe(expected) // Object.is equality
+  21 | });
+  22 |
+  23 | test("Update user", async ({request})=>{
+  24 |
+  25 | });
+  26 |
+  27 | test("Delete user", async ({request})=>{
+  28 |
+  29 | });
+```
